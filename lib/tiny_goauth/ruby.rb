@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'tiny_goauth/ruby/version'
 
 module TinyGoauth
