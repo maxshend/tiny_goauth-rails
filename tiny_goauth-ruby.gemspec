@@ -13,7 +13,9 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/maxshend/tiny_goauth-rails'
   spec.license       = 'MIT'
 
-  spec.files         = %w[README.md LICENSE.txt]
+  spec.add_dependency 'railties', '>= 6'
+
+  spec.files = %w[README.md LICENSE.txt]
   spec.files         += %w[tiny_goauth-rails.gemspec]
   spec.files         += Dir['lib/**/*']
   spec.test_files    = Dir['spec/**/*']
