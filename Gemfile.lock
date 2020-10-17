@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tiny_goauth-ruby (0.1.0)
+    tiny_goauth-rails (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -53,7 +53,7 @@ DEPENDENCIES
   rspec (~> 3.9.0)
   rubocop (~> 0.93.1)
   rubocop-performance
-  tiny_goauth-ruby!
+  tiny_goauth-rails!
 
 BUNDLED WITH
    2.1.4

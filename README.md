@@ -1,13 +1,13 @@
-# TinyGoauth::Ruby
+# TinyGoauth::Rails
 
-Integration with [tiny-goauth](https://github.com/maxshend/tiny-goauth) for ruby apps.
+Integration with [tiny-goauth](https://github.com/maxshend/tiny-goauth) for Rails apps.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'tiny_goauth-ruby'
+gem 'tiny_goauth-rails'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install tiny_goauth-ruby
+    $ gem install tiny_goauth-rails
 
 ## Usage
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/maxshend/tiny_goauth-ruby.
+Bug reports and pull requests are welcome on GitHub at https://github.com/maxshend/tiny_goauth-rails.
 
 
 ## License

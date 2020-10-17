@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'tiny_goauth/ruby/version'
+require 'tiny_goauth/rails/version'
 
 module TinyGoauth
-  module Ruby
+  module Rails
     class Error < StandardError; end
     # Your code goes here...
   end

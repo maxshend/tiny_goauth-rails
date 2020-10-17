@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.describe TinyGoauth::Ruby do
+RSpec.describe TinyGoauth::Rails do
   it 'has a version number' do
-    expect(TinyGoauth::Ruby::VERSION).not_to be nil
+    expect(TinyGoauth::Rails::VERSION).not_to be nil
   end
 end
