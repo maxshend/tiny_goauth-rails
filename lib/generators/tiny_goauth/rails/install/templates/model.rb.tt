@@ -1,3 +1,0 @@
-class <%= model_name.capitalize.singularize %> < ApplicationRecord
-  validates :auth_user_id, presence: true, uniqueness: { case_sensitive: false }
-end
