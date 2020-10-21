@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.files = %w[README.md LICENSE.txt]
   spec.files         += %w[tiny_goauth-rails.gemspec]
-  spec.files         += Dir['lib/**/*']
+  spec.files         += Dir['{lib,config}/**/*']
   spec.test_files    = Dir['spec/**/*']
   spec.require_paths = ['lib']
   spec.required_ruby_version = Gem::Requirement.new('>= 2.7.0')
