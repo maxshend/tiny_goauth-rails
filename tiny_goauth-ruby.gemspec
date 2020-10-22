@@ -13,11 +13,12 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/maxshend/tiny_goauth-rails'
   spec.license       = 'MIT'
 
+  spec.add_dependency 'active_interaction', '>= 3.8'
   spec.add_dependency 'railties', '>= 6'
 
   spec.files = %w[README.md LICENSE.txt]
   spec.files         += %w[tiny_goauth-rails.gemspec]
-  spec.files         += Dir['{lib,config}/**/*']
+  spec.files         += Dir['{app,lib,config}/**/*']
   spec.test_files    = Dir['spec/**/*']
   spec.require_paths = ['lib']
   spec.required_ruby_version = Gem::Requirement.new('>= 2.7.0')
