@@ -2,10 +2,14 @@
 
 module TinyGoauth
   class UsersController < ActionController::API
+    include ::TinyGoauth::Rails::ErrorHandler
+
     def create
       @interaction = CreateUser.run params
 
-      render json: { success: @interaction.valid? }
+      return render json: { success: true } if @interaction.valid?
+
+      render_resource_errors @interaction
     end
   end
 end
