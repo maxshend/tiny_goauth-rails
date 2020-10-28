@@ -34,6 +34,13 @@ module TinyGoauth
 
           inject_into_class model_path, class_path.last, format_content(content, indent_depth) if model_exists?
         end
+
+        def generate_interactor
+          interactor_path = File.join 'app', 'interactions', 'tiny_goauth', 'create_auth.rb'
+          generate_path = File.join destination_root, interactor_path
+
+          template 'create_auth.rb', generate_path, klass: name.classify
+        end
       end
     end
   end

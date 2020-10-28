@@ -1,0 +1,19 @@
+module TinyGoauth
+  class CreateAuth < ::ActiveInteraction::Base
+    object :subject, class: Class, default: <%= config[ :klass ] %>
+
+    integer :id
+    string :email
+
+    def execute
+      @record = subject.find_by auth_user_id: id
+
+      return if @record
+
+      @record = subject.new email: email, auth_user_id: id
+      errors.merge! @record unless @record.save
+
+      @record
+    end
+  end
+end
