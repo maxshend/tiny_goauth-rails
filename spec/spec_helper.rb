@@ -2,6 +2,9 @@
 
 require 'bundler/setup'
 require 'tiny_goauth/rails'
+require 'combustion'
+
+Combustion.initialize! :active_record, :action_controller, :action_view
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
