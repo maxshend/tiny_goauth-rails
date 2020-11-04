@@ -9,6 +9,7 @@ group :development, :test do
   gem 'activerecord', '>= 6'
   gem 'combustion', '~> 1.3'
   gem 'pg', '>= 0.18', '< 2.0'
+  gem 'sprockets-rails'
 
   gem 'rake', '~> 12.0'
   gem 'rubocop', '~> 0.93.1', require: false
