@@ -4,6 +4,10 @@ require 'find'
 
 module Helpers
   module FileDiff
+    def file_content(path)
+      IO.binread path
+    end
+
     def dir_files(path)
       Find.find(path).map { |f| f if File.file?(f) }.compact
     end
