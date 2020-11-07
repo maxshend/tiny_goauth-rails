@@ -3,6 +3,7 @@ PATH
   specs:
     tiny_goauth-rails (0.1.0)
       active_interaction (>= 3.8)
+      jwt (>= 2.2)
       railties (>= 6)
 
 GEM
@@ -46,6 +47,7 @@ GEM
     erubi (1.9.0)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    jwt (2.2.2)
     loofah (2.7.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)

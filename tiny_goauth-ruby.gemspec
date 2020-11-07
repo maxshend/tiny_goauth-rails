@@ -14,6 +14,7 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.add_dependency 'active_interaction', '>= 3.8'
+  spec.add_dependency 'jwt', '>= 2.2'
   spec.add_dependency 'railties', '>= 6'
 
   spec.files = %w[README.md LICENSE.txt]
