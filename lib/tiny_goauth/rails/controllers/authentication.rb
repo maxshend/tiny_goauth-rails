@@ -21,6 +21,12 @@ module TinyGoauth
           unauthenticated_error halt
         end
 
+        def current_user
+          return unless @current_user_id
+
+          @current_user ||= User.where(auth_user_id: @current_user_id).first
+        end
+
         def render_unauthenticated_error(halt)
           return unless halt
 
