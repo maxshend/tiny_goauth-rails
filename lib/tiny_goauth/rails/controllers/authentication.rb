@@ -13,12 +13,12 @@ module TinyGoauth
         def check_token(halt: true)
           jwt = request.headers['Authorization']
 
-          return unauthenticated_error halt unless jwt
+          return render_unauthenticated_error halt unless jwt
 
-          payload, = JWT.decode jwt, ::TinyGoauth::Rails.config.public_key, true, { algorithm: 'RS256' }
+          payload, = JWT.decode jwt, ::TinyGoauth::Rails.public_key, true, { algorithm: 'RS256' }
           @current_user_id = payload['user_id']
         rescue JWT::DecodeError
-          unauthenticated_error halt
+          render_unauthenticated_error halt
         end
 
         def current_user
@@ -32,7 +32,7 @@ module TinyGoauth
 
           render json: {
             success: false, errors: I18n.t('tiny_goauth.errors.unauthenticated')
-          }, status: :unauthenticated
+          }, status: :unauthorized
         end
       end
     end

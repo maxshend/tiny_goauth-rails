@@ -1,0 +1,4 @@
+en:
+  tiny_goauth:
+    errors:
+      unauthenticated: unauthenticated

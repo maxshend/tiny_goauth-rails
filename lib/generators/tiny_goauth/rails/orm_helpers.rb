@@ -29,7 +29,7 @@ module TinyGoauth
         end
 
         def model_path
-          @model_path ||= File.join('app', 'models', "#{file_path}.rb")
+          @model_path ||= "app/models/#{file_path}.rb"
         end
 
         def format_content(content, indent_depth)

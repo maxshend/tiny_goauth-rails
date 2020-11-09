@@ -1,0 +1,3 @@
+TinyGoauth::Rails.setup do |config|
+  config.public_key = ENV.fetch 'GOAUTH_PK'
+end

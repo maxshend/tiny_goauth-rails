@@ -7,6 +7,10 @@ module TinyGoauth
   module Rails
     class Error < StandardError; end
 
+    module Controllers
+      autoload :Authentication, 'tiny_goauth/rails/controllers/authentication'
+    end
+
     autoload :ErrorHandler, 'tiny_goauth/rails/error_handler'
   end
 end

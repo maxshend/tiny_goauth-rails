@@ -36,10 +36,13 @@ module TinyGoauth
         end
 
         def generate_interactor
-          interactor_path = File.join 'app', 'interactions', 'tiny_goauth', 'create_auth.rb'
-          generate_path = File.join destination_root, interactor_path
+          generate_path = File.join destination_root, 'app/interactions/tiny_goauth/create_auth.rb'
 
           template 'create_auth.rb', generate_path, klass: name.classify
+        end
+
+        def copy_initializer
+          template 'tiny_goauth.rb', 'config/initializers/tiny_goauth.rb'
         end
       end
     end
