@@ -1,7 +1,7 @@
 class AddTinyGoauthTo<%= table_name.camelize %> < ActiveRecord::Migration<%= migration_version %>
   def self.up
     change_table :<%= table_name %> do |t|
-      t.integer :auth_user_id, null: false
+      t.integer :auth_id, null: false
       t.string :email, null: false
 <% attributes.each do |attribute| -%>
       t.<%= attribute.type %> :<%= attribute.name %>
@@ -10,7 +10,7 @@ class AddTinyGoauthTo<%= table_name.camelize %> < ActiveRecord::Migration<%= mig
       # t.timestamps null: false
     end
 
-    add_index :<%= table_name %>, :auth_user_id, unique: true
+    add_index :<%= table_name %>, :auth_id, unique: true
     add_index :<%= table_name %>, :email, unique: true
   end
 

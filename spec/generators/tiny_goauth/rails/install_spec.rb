@@ -9,7 +9,7 @@ RSpec.describe TinyGoauth::Rails::Generators::InstallGenerator do
   let(:model_path) { File.join dummy_path, 'app', 'models', 'user.rb' }
   let(:initializer_path) { File.join dummy_path, 'config', 'initializers', 'tiny_goauth.rb' }
   let(:validation_line) do
-    'validates :auth_user_id, presence: true, uniqueness: { case_sensitive: false }'
+    'validates :auth_id, presence: true, uniqueness: { case_sensitive: false }'
   end
 
   before :all do

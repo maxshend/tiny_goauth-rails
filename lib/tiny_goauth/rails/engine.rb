@@ -8,10 +8,19 @@ module TinyGoauth
   module Rails
     class Engine < ::Rails::Engine; end
 
-    mattr_accessor :public_key
+    mattr_accessor :access_key_path
+    mattr_accessor :refresh_key_path
 
     def self.setup
       yield self
+    end
+
+    def self.access_key
+      @access_key ||= OpenSSL::PKey.read(File.read(access_key_path))
+    end
+
+    def self.refresh_key
+      @refresh_key ||= OpenSSL::PKey.read(File.read(refresh_key_path))
     end
   end
 end

@@ -8,7 +8,7 @@ module TinyGoauth
       module OrmHelpers
         def model_content
           <<-HEREDOC
-  validates :auth_user_id, presence: true, uniqueness: { case_sensitive: false }
+  validates :auth_id, presence: true, uniqueness: { case_sensitive: false }
           HEREDOC
         end
 

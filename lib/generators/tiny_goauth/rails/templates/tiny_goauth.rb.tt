@@ -1,3 +1,4 @@
 TinyGoauth::Rails.setup do |config|
-  config.public_key = ENV.fetch 'GOAUTH_PK'
+  config.access_key_path = ENV.fetch 'GOAUTH_ACCESS_PK'
+  config.refresh_key_path = ENV.fetch 'GOAUTH_REFRESH_PK'
 end
