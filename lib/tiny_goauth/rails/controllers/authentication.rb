@@ -25,11 +25,10 @@ module TinyGoauth
           return unless @current_auth_id
 
           klass = ::TinyGoauth::Rails.model_name
+          var_name = "@current_#{klass.snakecase}"
 
-          instance_variable_set(
-            "@current_#{klass.snakecase}",
-            klass.constantize.where(auth_id: @current_auth_id).first
-          )
+          instance_variable_get(var_name) ||
+            instance_variable_set(var_name, klass.constantize.where(auth_id: @current_auth_id).first)
         end
 
         def render_unauthenticated_error(halt)
