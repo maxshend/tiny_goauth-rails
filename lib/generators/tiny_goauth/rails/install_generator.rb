@@ -42,7 +42,7 @@ module TinyGoauth
         end
 
         def copy_initializer
-          template 'tiny_goauth.rb', 'config/initializers/tiny_goauth.rb'
+          template 'tiny_goauth.rb', 'config/initializers/tiny_goauth.rb', name: name
         end
       end
     end

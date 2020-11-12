@@ -10,6 +10,7 @@ module TinyGoauth
 
     mattr_accessor :access_key_path
     mattr_accessor :refresh_key_path
+    mattr_accessor :model_name
 
     def self.setup
       yield self

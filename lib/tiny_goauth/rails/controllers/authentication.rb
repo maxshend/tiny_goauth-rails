@@ -6,7 +6,9 @@ module TinyGoauth
       module Authentication
         extend ActiveSupport::Concern
 
-        included { before_action :check_token }
+        included do
+          before_action :check_token
+        end
 
         private
 
@@ -17,15 +19,20 @@ module TinyGoauth
 
           payload, = JWT.decode jwt, ::TinyGoauth::Rails.access_key, true, { algorithm: 'RS256' }
           @current_auth_id = payload['user_id']
+          @current_roles = payload['roles']
         rescue JWT::DecodeError
           render_unauthenticated_error halt
         end
 
-        define_method("current_#{::TinyGoauth::Rails.model_name.snakecase}") do
+        def current_roles
+          @current_roles || []
+        end
+
+        define_method("current_#{::TinyGoauth::Rails.model_name.underscore}") do
           return unless @current_auth_id
 
           klass = ::TinyGoauth::Rails.model_name
-          var_name = "@current_#{klass.snakecase}"
+          var_name = "@current_#{klass.underscore}"
 
           instance_variable_get(var_name) ||
             instance_variable_set(var_name, klass.constantize.where(auth_id: @current_auth_id).first)
