@@ -4,13 +4,16 @@ module TinyGoauth
 
     integer :id
     string :email
+<% config[ :attrs ].each do |attr| -%>
+    <%= attr.type %> :<%= attr.name %>
+<% end -%>
 
     def execute
       @record = subject.find_by auth_id: id
 
       return if @record
 
-      @record = subject.new email: email, auth_id: id
+      @record = subject.new email: email, auth_id: id<%= config[ :attrs ].inject('') { |res, attr|  res + ", #{attr.name}: #{attr.name}" } %>
       errors.merge! @record unless @record.save
 
       @record

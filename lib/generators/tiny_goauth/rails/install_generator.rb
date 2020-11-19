@@ -38,7 +38,7 @@ module TinyGoauth
         def generate_interactor
           generate_path = File.join destination_root, 'app/interactions/tiny_goauth/create_auth.rb'
 
-          template 'create_auth.rb', generate_path, klass: name.classify
+          template 'create_auth.rb', generate_path, klass: name.classify, attrs: attributes
         end
 
         def copy_initializer
