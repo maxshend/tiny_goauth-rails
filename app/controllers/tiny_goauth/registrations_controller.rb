@@ -5,7 +5,8 @@ module TinyGoauth
     include ::TinyGoauth::Rails::ErrorHandler
 
     def create
-      @interaction = CreateAuth.run params
+      custom_params = params.to_unsafe_hash
+      @interaction = CreateAuth.run custom_params.merge(custom_params[:payload])
 
       return render json: { success: true } if @interaction.valid?
 
