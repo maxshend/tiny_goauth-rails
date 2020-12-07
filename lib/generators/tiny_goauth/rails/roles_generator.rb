@@ -13,7 +13,12 @@ module TinyGoauth
         def create_roles
           raise RequestHelpers::MissingAuthURL if ENV['AUTH_URL'].blank?
 
-          response = post_auth_roles attributes
+          response = case behavior
+                     when :revoke
+                       delete_auth_roles attributes
+                     else
+                       post_auth_roles attributes
+                     end
 
           return if response.code == '200'
 

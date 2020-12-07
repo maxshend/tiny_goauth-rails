@@ -37,6 +37,14 @@ module TinyGoauth
 
           http.request req
         end
+
+        def delete_auth_roles(roles)
+          uri = URI "#{ENV.fetch('AUTH_URL')}/internal/roles/delete?roles=#{roles}"
+          http = Net::HTTP.new uri.host, uri.port
+          req = Net::HTTP::Delete.new uri.path
+
+          http.request req
+        end
       end
     end
   end
