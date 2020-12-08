@@ -39,9 +39,10 @@ module TinyGoauth
         end
 
         def delete_auth_roles(roles)
-          uri = URI "#{ENV.fetch('AUTH_URL')}/internal/roles/delete?roles=#{roles}"
+          query_roles = roles.map { |role| "roles=#{role}" }.join('&')
+          uri = URI "#{ENV.fetch('AUTH_URL')}/internal/roles/delete"
           http = Net::HTTP.new uri.host, uri.port
-          req = Net::HTTP::Delete.new uri.path
+          req = Net::HTTP::Delete.new "#{uri.path}?#{query_roles}"
 
           http.request req
         end
